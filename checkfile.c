@@ -13,6 +13,7 @@ int main()
 	scanf("%d\n%d",&a,&b);
 	
 	checkGreater(a,b);
+	return 0;
 
 
 
