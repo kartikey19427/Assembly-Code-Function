@@ -1,0 +1,14 @@
+There are two files made. One is the standalone assembly file and the other is the C code file which calls the checkGreater function from assembly file.
+In the Standalone assembly file, there are 2 functions-_start function and the checkGreater function. The execution begins at the start function which takes 2 integer as input each using the read system call. the integer is stored in the .bss section where memory is allocated for read input. this is then transferred to required register. this is done for both integers.
+The checkGreater function compares these 2 integers using the cmp opcode.
+A jump opcode is then set such that if x(first integer)<y(second integer), then it would use the write system call to print '0' to the terminal. Else it would print '1' using the write system call.
+
+the C code has a header file inttypes which we use to call checkGreater function in 64 bit integers format.
+scanf is used to take user integer input.
+%ld is used for printing long integers in printf function.
+
+The hypothesis is correct. We cannot call checkGreater from the main function through the C code file. 
+Error: multiple definitions of '_start'
+We cannot have more than one function _start in the same final code. The first _start comes the std library which has a function _start of its own. We cannot have multiple declarations of a same function.
+
+
